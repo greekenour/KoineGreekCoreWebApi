@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Insight.Database;
+using Microsoft.Data.SqlClient;
 
 namespace KoineGreekAPI.Controllers
 {
@@ -12,29 +15,24 @@ namespace KoineGreekAPI.Controllers
     [Route("api/koinewords")]
     public class KoineWordsController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "the word is satisfaction", "the word is niceness", "the prechness is the meaning"
-        };
+        private readonly IConfiguration _configuration;
 
         private readonly ILogger<KoineWordsController> _logger;
 
-        public KoineWordsController(ILogger<KoineWordsController> logger)
+        public KoineWordsController(IConfiguration configuration, ILogger<KoineWordsController> logger)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [HttpGet]
-        public IEnumerable<KoineWords> Get()
+        public List<KoineWords> Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new KoineWords
-            {
-                Name = "Greek Word",
-                Definition = Summaries[rng.Next(Summaries.Length)],
-                Id = Guid.NewGuid()
-            })
-            .ToArray();
+            var myDb1ConnectionString = _configuration.GetConnectionString("KoineWords");
+            var connection = new SqlConnection(myDb1ConnectionString);
+            var result = connection.Query<KoineWords>("get_koine_words").ToList();
+
+            return result;
         }
     }
 }

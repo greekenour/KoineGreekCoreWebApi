@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoineGreekAPI", "KoineGreekAPI\KoineGreekAPI.csproj", "{90612699-7218-4EE5-AA3B-31A8EDEADB10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoineGreekAPI", "KoineGreekAPI\KoineGreekAPI.csproj", "{90612699-7218-4EE5-AA3B-31A8EDEADB10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{25BE64BC-E1AB-492B-96AB-C775F2DE0A43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoineGreekAPI.Repository", "KoineGreekAPI.Repository\KoineGreekAPI.Repository.csproj", "{CE576BA3-DF31-488E-BD25-BF522AD23E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{90612699-7218-4EE5-AA3B-31A8EDEADB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90612699-7218-4EE5-AA3B-31A8EDEADB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90612699-7218-4EE5-AA3B-31A8EDEADB10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE576BA3-DF31-488E-BD25-BF522AD23E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE576BA3-DF31-488E-BD25-BF522AD23E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE576BA3-DF31-488E-BD25-BF522AD23E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE576BA3-DF31-488E-BD25-BF522AD23E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE576BA3-DF31-488E-BD25-BF522AD23E66} = {25BE64BC-E1AB-492B-96AB-C775F2DE0A43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5974980-514B-462B-BD0B-B2A3EBEDA9C8}

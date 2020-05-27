@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Insight.Database" Version="6.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KoineGreekAPI.Repository\KoineGreekAPI.Repository.csproj" />
   </ItemGroup>
 
 
